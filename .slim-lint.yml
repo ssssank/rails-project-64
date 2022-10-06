@@ -1,0 +1,6 @@
+linters:
+  LineLength:
+    max: 100
+
+  RedundantDiv:
+    enabled: false
