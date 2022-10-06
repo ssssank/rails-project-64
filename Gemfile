@@ -80,6 +80,7 @@ gem 'minitest-power_assert'
 gem 'rollbar'
 gem 'rubocop', require: false
 gem 'rubocop-discourse'
+gem 'rubocop-performance'
 gem 'rubocop-rails', require: false
 gem 'slim_lint'
 gem 'slim-rails'
