@@ -9,6 +9,7 @@ AllCops:
   Exclude:
   - 'bin/**'
   - 'db/**'
+  - vendor/bundle/**/*
 
 Metrics/AbcSize:
   Enabled: false
