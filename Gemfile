@@ -84,3 +84,4 @@ gem 'rubocop-performance'
 gem 'rubocop-rails', require: false
 gem 'slim_lint'
 gem 'slim-rails'
+gem 'devise'

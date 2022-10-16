@@ -1,0 +1,12 @@
+.container
+  header.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-md-between.py-3.mb-4.border-bottom
+    a.d-flex.align-items-center.mb-2.mb-md-0.me-5.text-dark.text-decoration-none.fs-4(href="/") = 'Collective blog'
+    ul.nav.nav-pills
+      - if user_signed_in?
+        li.nav-item
+            li = link_to 'sign_out', destroy_user_session_path, data: { "turbo-method": :delete }
+      - else
+        li.nav-item
+              li = link_to 'sign_in', new_user_session_path
+        li.nav-item
+              li = link_to 'register', new_user_registration_path

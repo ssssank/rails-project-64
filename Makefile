@@ -2,7 +2,7 @@ setup:
 	bin/setup
 
 start:
-	bin/dev
+	bin/rails server
 
 lint:
 	bundle exec rubocop
