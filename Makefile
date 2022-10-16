@@ -1,5 +1,6 @@
 setup:
 	bin/setup
+	yarn
 
 start:
 	bin/rails server
