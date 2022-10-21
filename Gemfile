@@ -83,5 +83,6 @@ gem 'rubocop', require: false
 gem 'rubocop-discourse'
 gem 'rubocop-performance'
 gem 'rubocop-rails', require: false
+gem 'simple_form'
 gem 'slim_lint'
 gem 'slim-rails'
