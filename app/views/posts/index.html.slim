@@ -1,26 +1,9 @@
-= content_for :title do
-  = 'Posts'
+h1 Posts
 
-table.table.table-striped.table-hover.mb-5
-  thead
-    tr
-      th{ scope = 'col' } #
-      th{ scope = 'col' } Title
-      th{ scope = 'col' } Body
-      th{ scope = 'col' } Category
-      th
-
-  tbody
-    - @posts.each_with_index do |post, i|
-      tr
-        th{ scope = 'row' } = i + 1
-        td = post.title
-        td = post.body
-        / td = post.creator.name
-        td = post.category.name
-        td.d-flex
-          .me-4 = link_to 'Show', post
-          .me-4 = link_to 'Edit', edit_post_path(post)
-          = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
-
-= link_to 'New Task', new_post_path, class: 'btn btn-primary'
+- @posts.each_with_index do |post, i|
+  .card.mb-2
+    .card-body
+      h5.card-title = link_to post.title, post
+      p.card-text = post.body.truncate(150)
+      small.card-text = post.category.name
+      p.card-text = post.creator.email
