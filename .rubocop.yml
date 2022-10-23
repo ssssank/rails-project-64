@@ -9,6 +9,7 @@ AllCops:
   Exclude:
   - 'bin/**'
   - 'db/**'
+  - 'config/**/*'
   - vendor/bundle/**/*
 
 Metrics/AbcSize:
@@ -24,4 +25,7 @@ Metrics/BlockLength:
   Enabled: false
 
 Style/AsciiComments:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
   Enabled: false
