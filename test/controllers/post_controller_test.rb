@@ -1,12 +1,13 @@
 require "test_helper"
 
 class PostControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @post = posts(:one)
 
     @attrs = {
-      title: Faker::Movies::PrincessBride.character,
-      creator_id: users(:one).id,
+      title: Faker::Lorem.sentence,
+      body: Faker::Lorem.paragraphs.join,
       category_id: categories(:one).id
     }
   end
@@ -17,12 +18,14 @@ class PostControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get new' do
-    get new_post_url
+    sign_in users(:one)
+    get new_post_path
     assert_response :success
   end
 
   test 'should create post' do
-    post posts_url, params: { post: @attrs }
+    sign_in users(:one)
+    post posts_path, params: { post: @attrs }
 
     post = Post.find_by @attrs
 

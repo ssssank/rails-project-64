@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
   def index
     @posts = Post.all
   end
@@ -18,6 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new post_params
     @post.creator = current_user
+
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
