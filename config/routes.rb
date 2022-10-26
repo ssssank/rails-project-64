@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :posts
+  resources :posts do
+    scope module: :posts do
+      resources :comments, only: %i[edit create update destroy]
+    end
+  end
   resources :categoris
   # Defines the root path route ("/")
   # root "articles#index"

@@ -14,6 +14,34 @@ p
 
 hr
 
+.mt-3
+  - if @post.comments.any?
+    h4 Comments
+
+    table.table.mb-5
+      thead
+        tr
+          th{ scope = 'col' } #
+          th{ scope = 'col' } Content
+          th
+      tbody
+      - @post.comments.each_with_index do |comment, i|
+        - if comment.id
+          tr
+            th{ scope = 'row' } = i + 1
+            td = comment.content
+            td.d-flex.justify-content-end
+              = link_to 'Edit', edit_post_comment_path(@post, comment), class: 'btn btn-outline-primary me-2'
+              = link_to 'Delete', post_comment_path(@post, comment),
+                data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+                class: 'btn btn-outline-danger me-2'
+
+= simple_form_for @comment, url: post_comments_path(@post) do |f|
+  = f.input :content, label: 'Add your comment:'
+  = f.submit class: 'btn btn-primary mt-3'
+
+hr
+
 .d-flex
   = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
   = link_to 'Delete', post_path(@post),
