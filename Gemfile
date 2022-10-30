@@ -75,6 +75,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'ancestry'
 gem 'devise'
 gem 'faker'
 gem 'minitest-power_assert'
