@@ -18,11 +18,11 @@ p
 hr
 
 .mt-3
+  - if user_signed_in?
+    = render 'posts/comments/form', url: post_comments_path(@post), post: @post, comment: @post.comments.build
+
   - if @post.comments.any?
     h4 Comments
-
-    - if user_signed_in?
-      = render 'posts/comments/form', url: post_comments_path(@post), post: @post, comment: @post.comments.build
 
     - if @post.comments.roots.any?
       - @post.comments.roots.each do |post_comment|
