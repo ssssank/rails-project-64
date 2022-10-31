@@ -7,3 +7,6 @@ h1 Posts
       p.card-text = post.body.truncate(150)
       small.card-text = post.category.name
       p.card-text = post.creator.email
+      small.text-muted.mt-auto
+        = post.likes.size
+        i.bi-hand-thumbs-up.text-muted.link-secondary

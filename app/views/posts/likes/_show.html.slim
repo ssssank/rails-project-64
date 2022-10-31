@@ -1,0 +1,13 @@
+span.me-2
+  - if user_signed_in?
+    small = @post.likes.count
+    - if current_user_like?(@post)
+      = link_to post_like_path(@post, current_user_like(@post)), class: 'text-decoration-none', data: { turbo_method: :delete } do
+        span.bi.bi-hand-thumbs-up-fill.text-secondary
+    - else
+      = link_to post_likes_path(@post), class: 'text-decoration-none', data: { turbo_method: :post } do
+        span.bi.bi-hand-thumbs-up.text-secondary
+  - else
+    small.text-muted = @post.likes.size
+    = link_to new_user_session_path do
+      i.bi-hand-thumbs-up.text-muted.link-secondary

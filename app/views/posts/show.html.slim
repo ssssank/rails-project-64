@@ -12,6 +12,9 @@ p
   strong.me-2 Status:
   = @post.category.name
 
+p
+  = render 'posts/likes/show', post: @post
+
 hr
 
 .mt-3

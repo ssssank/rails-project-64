@@ -5,4 +5,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :likes, foreign_key: 'creator_id', dependent: :destroy, inverse_of: :creator
 end

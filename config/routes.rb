@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :posts do
     scope module: :posts do
-      resources :comments, only: %i[edit create update destroy]
+      resources :comments, only: %i[create]
+      resources :likes, only: %i[create destroy]
     end
   end
   resources :categoris
