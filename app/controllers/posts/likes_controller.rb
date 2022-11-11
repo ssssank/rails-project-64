@@ -2,10 +2,11 @@
 
 module Posts
   class LikesController < Posts::ApplicationController
+    before_action :authenticate_user!, only: %i[create destroy]
     def create
       @like = resource_post.likes.build
 
-      @like.creator = current_user
+      @like.user = current_user
       @like.save
 
       redirect_to resource_post

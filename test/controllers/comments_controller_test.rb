@@ -3,7 +3,11 @@
 require 'test_helper'
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    sign_in users(:one)
+
     @post_comment = post_comments(:one)
     @post = @post_comment.post
   end
