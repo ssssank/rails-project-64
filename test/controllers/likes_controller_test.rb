@@ -19,7 +19,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
       post post_likes_url(@post_two, locale: :en)
     end
 
-    assert_redirected_to post_url(@post_two, locale: :en)
+    assert_redirected_to post_url(@post_two)
 
     like = PostLike.find_by!(user_id: @user.id, post_id: @post_two.id)
 

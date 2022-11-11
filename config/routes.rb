@@ -2,17 +2,15 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  scope '(:locale)', locale: /en|ru/ do
-    root 'posts#index'
-    # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-    resources :posts do
-      scope module: :posts do
-        resources :comments, only: %i[create]
-        resources :likes, only: %i[create destroy]
-      end
+  root 'posts#index'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :posts do
+    scope module: :posts do
+      resources :comments, only: %i[create]
+      resources :likes, only: %i[create destroy]
     end
-    resources :categoris
   end
+  resources :categoris
   # Defines the root path route ("/")
   # root "articles#index"
 end
