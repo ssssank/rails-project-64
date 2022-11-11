@@ -1,0 +1,11 @@
+ru:
+  layouts:
+    application:
+      title: Коллективный блог
+    shared:
+      nav:
+        title: Коллективный блог
+        posts: Посты
+        sign_out: Выйти
+        sign_in: Войти
+        register: Зарегистрироваться

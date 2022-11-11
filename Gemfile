@@ -79,6 +79,7 @@ gem 'ancestry'
 gem 'devise'
 gem 'faker'
 gem 'minitest-power_assert'
+gem 'rails-i18n'
 gem 'rollbar'
 gem 'rubocop', require: false
 gem 'rubocop-discourse'

@@ -1,0 +1,15 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+    error_notification:
+      default_message: "Пожалуйста, проверьте:"
+    placeholders:
+      post:
+        title: Введите заголовок
+        body: Введите содержимое
+      post_comment:
+        content: Введите содержимое

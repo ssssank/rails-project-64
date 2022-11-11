@@ -29,9 +29,9 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  show: Show
-  edit: Edit
-  destroy: Delete
-  confirm: Are you sure?
-  back: Back
+ru:
+  show: Показать
+  edit: Изменить
+  destroy: Удалить
+  confirm: Вы уверены?
+  back: Назад

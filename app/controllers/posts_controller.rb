@@ -16,37 +16,15 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit
-    @post = Post.find params[:id]
-  end
-
   def create
     @post = Post.new post_params
     @post.creator = current_user
 
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to @post, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def update
-    @post = Post.find params[:id]
-
-    if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @post = Post.find params[:id]
-
-    @post.destroy
-
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
   private

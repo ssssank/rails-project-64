@@ -1,0 +1,21 @@
+en:
+  posts:
+    index:
+      title: Posts
+    new:
+      title: New Post
+    show:
+      comments: Comments
+      answer: Answer
+      description: Description
+      creator: Creator
+      category: Category
+    create:
+      success: Post was successfully created.
+
+    comments:
+      create:
+        success: Comment was successfully created.
+        error: Comment has not been added
+      comment:
+        answer: Answer

@@ -1,15 +1,15 @@
 h1
   = @post.title
 p
-  strong.me-2 Description:
+  strong.me-2 = t('.description')
   = @post.body
 
 p
-  strong.me-2 Creator:
+  strong.me-2 = t('.creator')
   = @post.creator.email
 
 p
-  strong.me-2 Status:
+  strong.me-2 = t('.category')
   = @post.category.name
 
 p
@@ -22,7 +22,7 @@ hr
     = render 'posts/comments/form', url: post_comments_path(@post), post: @post, comment: @post.comments.build
 
   - if @post.comments.any?
-    h4 Comments
+    h4 = t('.comments')
 
     - if @post.comments.roots.any?
       - @post.comments.roots.each do |post_comment|
@@ -34,14 +34,10 @@ hr
                 = render 'posts/comments/comment', post_comment: child_comment
           .card-footer
             a.d-block.small.text-muted[data-bs-toggle="collapse" href="#new-post-comment-#{post_comment.id}"]
-              = 'Answer'
+              = t('.answer')
             .collapse[data-bs-target="#new-post-comment-#{post_comment.id}" id="new-post-comment-#{post_comment.id}"]
               - if user_signed_in?
                 = render 'posts/comments/form', url: post_comments_path(@post), post: @post, comment: @post.comments.build, parent_id: post_comment.id
 
 .d-flex
-  = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
-  = link_to 'Delete', post_path(@post),
-    class: 'btn btn-outline-danger me-2',
-    data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
-  = link_to 'Back', :back, class: 'btn btn-outline-primary'
+  = link_to t('back'), :back, class: 'btn btn-outline-primary'

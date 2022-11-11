@@ -1,0 +1,21 @@
+ru:
+  posts:
+    index:
+      title: Посты
+    new:
+      title: Новый пост
+    show:
+      comments: Комментарии
+      answer: Ответить
+      description: Описание
+      creator: Создатель
+      category: Категория
+    create:
+      success: Пост успешно создан
+
+    comments:
+      create:
+        success: Коммент добавлен
+        error: Коммент не добавлен
+      comment:
+        answer: Ответить

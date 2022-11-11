@@ -10,9 +10,9 @@ module Posts
       @comment.user = current_user
 
       if @comment.save
-        redirect_to resource_post, notice: 'Comment was successfully created.'
+        redirect_to resource_post, notice: t('.success')
       else
-        flash[:alert] = 'Comment has not been added'
+        flash[:alert] = t('.error')
         render 'posts/show'
       end
     end

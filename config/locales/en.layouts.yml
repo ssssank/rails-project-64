@@ -1,0 +1,11 @@
+en:
+  layouts:
+    application:
+      title: Collective Blog
+    shared:
+      nav:
+        title: Collective Blog
+        posts: Posts
+        sign_out: Sign Out
+        sign_in: Sign in
+        register: Register
