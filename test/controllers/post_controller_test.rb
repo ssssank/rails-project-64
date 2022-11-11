@@ -36,29 +36,7 @@ class PostControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show post' do
-    get post_url(@post)
+    get post_url(@post, locale: :en)
     assert_response :success
-  end
-
-  test 'should get edit' do
-    get edit_post_url(@post)
-    assert_response :success
-  end
-
-  test 'should update post' do
-    patch post_url(@post), params: { post: @attrs }
-
-    @post.reload
-
-    assert { @post.title == @attrs[:title] }
-    assert_redirected_to post_url(@post)
-  end
-
-  test 'should destroy post' do
-    delete post_url(@post)
-
-    assert { !Post.exists? @post.id }
-
-    assert_redirected_to posts_url
   end
 end

@@ -16,23 +16,13 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create like post' do
     assert_difference('PostLike.count', 1) do
-      post post_likes_path(@post_two)
+      post post_likes_url(@post_two, locale: :en)
     end
 
-    assert_redirected_to post_url(@post_two)
+    assert_redirected_to post_url(@post_two, locale: :en)
 
     like = PostLike.find_by!(user_id: @user.id, post_id: @post_two.id)
 
     assert { like }
-  end
-
-  test 'should destroy like' do
-    assert_difference('PostLike.count', -1) do
-      delete post_like_path(@post_one, @like)
-    end
-
-    assert_redirected_to post_url(@post_one)
-
-    assert_not PostLike.exists? @like.id
   end
 end
