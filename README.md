@@ -5,3 +5,30 @@
 # Collective Blog
 
 Link to demo: [link](https://elegant-cats-production.up.railway.app/)
+
+## Requirements
+
+- Ruby 3.1.2
+- Rails >= 7
+- NodeJS >= 16
+- Yarn
+- Make
+
+## Setup
+
+```bash
+make setup
+```
+
+## Run server
+
+```bash
+make start
+```
+
+## Run tests and linter
+
+```bash
+make test
+make lint
+```
